@@ -1,0 +1,3 @@
+/home/heygears/Documents/CPPLearn/cmake-build-debug/CMakeFiles/untitled.dir
+/home/heygears/Documents/CPPLearn/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/heygears/Documents/CPPLearn/cmake-build-debug/CMakeFiles/rebuild_cache.dir
