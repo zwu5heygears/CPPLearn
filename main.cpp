@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <math.h>
+
+#include "Sort.h"
 // hello
 /* hello */
 #define MAX 200
@@ -143,6 +145,50 @@ int main() {
         }
         if(i > 5) break;
     }
+
+    /// 数组 (相同类型 连续内存空间)
+    int arr1[10];
+    int arr2[5] = {1, 20, 3,42,5};
+    int arr3[] = {1, 2, 3};
+    int arr4[] = {};
+    cout << sizeof(arr1) / sizeof(arr1[0]) << endl;
+    for(int i = 0; i < sizeof(arr2) / sizeof(int); ++i){
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+    cout << arr2 << &arr2[0] << endl;
+
+    int start = 0;
+    int end = sizeof(arr2) / sizeof(int) - 1;
+    while(start < end){
+        auto temp = arr2[start];
+        arr2[start] = arr2[end];
+        arr2[end] = temp;
+        start++;
+        end--;
+    }
+    for(int i = 0; i < sizeof(arr2) / sizeof(int); ++i){
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+    Sort::GetInstance().BubbleSort(arr2, sizeof(arr2) / sizeof(arr2[0]));
+
+    int arr[2][3];
+    int arr5[2][3] = {
+            {1, 2, 3},
+            {4, 5, 6}
+    };
+    int arr6[2][3] = {1, 2, 3, 4, 5, 6};
+    for(int i = 0; i < 2; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << arr5[i][j] << " ";
+        }
+    }
+    cout << endl;
+    cout << sizeof(int *) << ":" << sizeof(char *) << endl;
+    cout << sizeof(arr5) << arr5 << &arr5[0][0] << endl;
+
+
 
 
     return 0;
