@@ -5,13 +5,19 @@
 #ifndef UNTITLED_ADDRESSBOOK_H
 #define UNTITLED_ADDRESSBOOK_H
 #include <iostream>
+#include <string>
+
 
 class AddressBook {
 public:
     static AddressBook& GetInstance();
     void showMenu();
     void sinOut();
+
+protected:
+
 private:
+    std::string name;  // 成员属性私有化
     AddressBook();
     ~AddressBook();
     AddressBook(const AddressBook &) = delete;

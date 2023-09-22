@@ -40,5 +40,4 @@ void AddressBook::sinOut() {
             cout << "input again:" << endl;
             break;
     }
-
 }

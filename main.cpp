@@ -4,8 +4,10 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <string.h>
 #include <math.h>
 
+#include "Cube.h"
 #include "Sort.h"
 #include "AddressBook.h"
 // hello
@@ -59,6 +61,18 @@ struct school{
     }mon;
 };
 
+struct TestStruce{
+public:
+    string name;
+    int m_data;
+private:
+    int StructFun();
+};
+
+int TestStruce::StructFun() {
+    return m_data;
+}
+
 void printAll(const Student &s);
 void printAll(const Student *s);
 int * fun();
@@ -66,6 +80,10 @@ int * fun();
 int * fun(int a);
 int &fun1(const int &a);
 int fun2(const int &a, int, float);
+void fun3(Cube c);
+void fun4(Cube &c);
+Cube fun5();
+void fun6();
 
 int g_a = 10;
 const int c_a = 10;
@@ -366,6 +384,38 @@ int main() {
     int& m14 = fun1(l_a);
     cout << m14 << endl;
     cout << add2() << endl;
+
+    Cube c1, c2;  // 不要加() 编译器误认为函数声明
+    string string1 = "cube";
+    Cube c6 = string1; // 隐式转换
+    cout << c6.getName() << endl;
+    c1.SetH(20.0);
+    c1.SetL(30.0);
+    c1.SetW(40.0);
+    cout << c1.GetArea() << " " << c1.GetVolume() << endl;
+    c2.SetH(20.0);
+    c2.SetL(30.0);
+    c2.SetW(40.0);
+    cout << Cube::isSame(c1, c2) << endl;
+    Cube c3("today");
+    cout << c3.getName() << ":" << c2.getName() << endl;
+
+    Cube c5(c3);
+    cout << &(c5.m) << &(c3.m) << endl;
+
+    fun3(c5);
+    Cube c7 = fun5();
+    cout << "拷贝构造函数后地址" << &c7 << endl;
+//    fun6();
+
+
+
+    /// 数值转换  int() static_cast<int>() memcpy() cout.setf()
+    float f5 = 1.0;
+    char ch5[4] = {0};
+    memcpy(&ch, &f5, 4);
+    cout.setf(ios::hex);
+
     return 0;
 }
 
@@ -410,4 +460,21 @@ int fun2(const int &a, int, float)
 {
     int b = a + 10;
     return b;
+}
+
+void fun3(Cube c)
+{
+    cout << c.getName() << endl;
+}
+
+Cube fun5(){
+    Cube p;
+    cout << "拷贝构造函数前地址" << &p << endl;
+    return p;
+}
+
+void fun6()
+{
+    Cube cc = fun5();
+    cout << "拷贝构造函数后地址" << &cc << endl;
 }
