@@ -7,13 +7,15 @@
 #include <math.h>
 
 #include "Sort.h"
+#include "AddressBook.h"
 // hello
 /* hello */
 #define MAX 200
 using namespace std;  // const
 const int MAX2 = 300;
-int add2(int a, int b);
+int add2(int a = 10, int b = 10);
 int add2(int a, int b, int c);
+int add2(int &a, int &b, int &c); // &
 int add(int a, int b)
 {
     return a + b;
@@ -59,7 +61,14 @@ struct school{
 
 void printAll(const Student &s);
 void printAll(const Student *s);
+int * fun();
+//void * fun(); // 函数重载不能修改返回值
+int * fun(int a);
+int &fun1(const int &a);
+int fun2(const int &a, int, float);
 
+int g_a = 10;
+const int c_a = 10;
 int main() {
     int v2_; // letter number _ (case)
     int a = 0;  // variable use for manage memory
@@ -327,6 +336,36 @@ int main() {
     printAll(*ss);
     printAll(ss+2);
 
+//    AddressBook::GetInstance();
+
+    /// 内存模型
+    // 代码区 --> 全局区 --> 栈区 --> 堆区
+    int l_a = 10;
+    static int s_a = 10;
+    const int c_l_a = 10;
+    cout << &l_a << " " << &g_a << " " << &s_a << " " << &c_l_a << " " << &c_a << endl;
+
+    int *p7 = fun();
+    cout << p7 << *p7 << endl;
+    delete p7;
+    cout << p7 << endl;
+//    if(p7 == nullptr) cout << "nullptr" << endl;  // 指针不为空指针
+    *p7 = l_a;
+    cout << p7 << *p7 << endl;
+
+    /// 引用 = 指针常量
+    int m12 = 10;
+    int &m13 = m12;  // 不可改变指向其他变量
+    cout << m13 << endl;
+    m12 = 20;
+    cout << m13 << endl;
+    m13 = 50;
+    m13 = l_a;
+    cout << m12 << endl;
+
+    int& m14 = fun1(l_a);
+    cout << m14 << endl;
+    cout << add2() << endl;
     return 0;
 }
 
@@ -342,10 +381,33 @@ int add2(int a, int b, int c)
 
 void printAll(const Student &s)
 {
+    cout << &s << endl;
     cout << s.name << s.age << s.height << endl;
 }
 
 void printAll(const Student *s)
 {
     cout << s->name << s->age << s->height << endl;
+}
+
+int *fun()
+{
+    int *p = new int(10);
+    return p;
+}
+
+int * fun(int a)
+{
+    return nullptr;
+}
+
+int &fun1(const int &a){
+    static int b = a + 10;
+    return b;
+}
+
+int fun2(const int &a, int, float)
+{
+    int b = a + 10;
+    return b;
 }
