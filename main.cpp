@@ -12,6 +12,53 @@
 #define MAX 200
 using namespace std;  // const
 const int MAX2 = 300;
+int add2(int a, int b);
+int add2(int a, int b, int c);
+int add(int a, int b)
+{
+    return a + b;
+}
+void swap(int * a, int *b){
+   int temp = *a;
+   *a = *b;
+   *b = temp;
+}
+void swap(int& a, int& b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+struct Student
+{
+    string name;
+    int age;
+    float height;
+};
+
+struct Teacher{
+    string name;
+    int age;
+    float height;
+}teacher;
+
+struct school{
+    struct Tea{
+        string name;
+        int age;
+    };
+    struct Stu{
+        string name;
+        int age;
+    };
+    struct Mon{
+        const string name;
+        const int age;
+    }mon;
+};
+
+void printAll(const Student &s);
+void printAll(const Student *s);
 
 int main() {
     int v2_; // letter number _ (case)
@@ -188,8 +235,117 @@ int main() {
     cout << sizeof(int *) << ":" << sizeof(char *) << endl;
     cout << sizeof(arr5) << arr5 << &arr5[0][0] << endl;
 
+    /// 函数
+    cout << add(1, 10) << endl;
+    int swap1 = 10, swap2 = 20;
+    swap(swap1, swap2);
+    cout << "1:" << swap1 << "2:" << swap2 << endl;
+    cout << add2(1, 2) << endl;
+    cout << add2(1, 2, 3) << endl;
 
 
+    /// 指针
+    int m8 = 10;
+    int *p = &m8;
+    cout << p << *p << endl;
+    cout << sizeof(p) << sizeof(int*) << sizeof(float*) << sizeof(char*) << endl;
+    int *p1 = nullptr;
+    cout << sizeof(p1) << p1 << endl;
+//    *p1 = 10;  // 空指针(0-255)地址系统占用不可访问
+
+//    int *p2 = (int *)0x1100;  //  指针变量中的值是非法的内存地址，进而形成野指针。
+//    局部指针变量没有被初始化。
+//    指针所指向的变量在指针之前被销毁（返回局部变量和局部数组）。
+//    使用已经释放过的指针。
+//    进行了错误的指针运算。
+//    进行了错误的强制类型转换。
+//    *p2 = 10;
+//    cout << *p2 << endl;
+
+    int m10 = 20;
+    int m11 = 30;
+    const int * p3 = &m10;  // 常量指针
+//    *p3 = 50;  // no
+    p3 = &m11;
+    cout << *p3 << endl;
+
+    int * const p4 = &m10; // 指针常量
+//    p4 = &m11; // no
+    *p4 = 50;
+    cout << *p4 << endl;
+
+
+    for(int i = 0; i < sizeof(arr2) / sizeof(int); ++i){
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+    int *p5 = arr2;
+    for(int i = 0; i < sizeof(arr2) / sizeof(arr2[0]); ++i)
+    {
+        cout << *p5 << " ";
+//        p5++;
+//        p5 = p5 + 1;
+//        p5 = p5 + sizeof(int); // no
+        p5 ++;
+    }
+    cout << endl;
+
+    cout << arr2 << " " << arr2 + 1 << endl;
+    cout << p5 << " " << ++p5 << " " << (p5 + 1) << endl;
+
+    int* p6 = arr6[0];
+    for(;p6 < arr6[0] + 6; ++p6){
+        cout << *p6 << " ";
+    }
+    for(int i = 0; i < 2; ++i){
+        for(int j = 0; j < 3; ++j){
+            cout << *(arr6[i] + j) << " ";
+        }
+    }
+    int a1 = 10, a2 = 20;
+    swap(&a1, &a2);
+    cout << a1 << a2 << endl;
+
+    /// 结构体
+    Student s1{"zwu5", 10, 200.0};
+    cout << s1.age << s1.name << s1.height << endl;
+
+    teacher.name = "zeku";
+    teacher.age = 50;
+    teacher.height = 300.0;
+//    teacher = s1;  // 同一种结构体相互赋值
+    Student s2 = std::move(s1);
+    cout << s2.name << endl;
+
+    Student sArray[3] = {
+            {"z", 2, 2.0},
+            {"w", 3, 3.0},
+            {"k", 4, 4.0}
+    };
+    Student *ss = sArray;
+    cout << ss->name << (ss+1)->age << endl;
+    printAll(*ss);
+    printAll(ss+2);
 
     return 0;
+}
+
+int add2(int a, int b)
+{
+    return (a + b) * 2;
+}
+
+int add2(int a, int b, int c)
+{
+    return (a + b + c);
+}
+
+void printAll(const Student &s)
+{
+    cout << s.name << s.age << s.height << endl;
+}
+
+void printAll(const Student *s)
+{
+    cout << s->name << s->age << s->height << endl;
 }
