@@ -115,6 +115,34 @@ int main() {
             break;
     }
 
+    int m7= 20;
+    while(m7 > 0){
+        m7--;
+        cout << m7 << " ";
+    }
+    do{
+        m7++;
+        cout << m7 << " ";
+    }while(m7 < 0);
+
+    int randnum = rand() % 100 +1;
+    double randnum2 = (double)rand() / RAND_MAX * (100 - 10) + 10; // 随机数
+
+    int v = 100;
+    do{
+        if((pow(v % 10, 3) + pow(v / 10 % 10, 3) + pow(v / 100, 3)) == double(v)){
+            cout << v << " ";
+        }
+        v++;
+    }while(v < 1000);
+
+    for(int i = 0; i < 10; ++i){
+        if(i > 2){
+            cout << i << " ";
+            continue;
+        }
+        if(i > 5) break;
+    }
 
 
     return 0;
