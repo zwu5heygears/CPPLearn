@@ -23,7 +23,11 @@ public:
     void printHello();
 
     void setMember() const; // 常函数 不可修改成员属性(除非mutable)
-    void getCubePrivate();
+    void printABC();
+    Test operator+(Test & test);
+    void operator<<(Test &test);
+    void setWH(int w, int h);
+
     int *mW;
 private:
     int *mH;

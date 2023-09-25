@@ -417,3 +417,11 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/heygears/Documents/CPPLearn/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VBro76
+
+Run Build Command(s):/opt/CLion-2023.1.5/clion-2023.1.5/bin/ninja/linux/x64/ninja cmTC_43110 && [1/2] Building C object CMakeFiles/cmTC_43110.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_43110
+
+
+

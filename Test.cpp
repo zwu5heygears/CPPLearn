@@ -60,6 +60,26 @@ void friendFun(Test *test) {
     cout << test->ma << test->mb << test->mc << endl;
 }
 
+Test Test::operator+(Test &test) {
+    this->ma += test.ma;
+    this->mb += test.mb;
+    this->mc += test.mc;
+    return *this;
+}
+
+void Test::printABC() {
+    cout << ma << mb << mc << endl;
+}
+
+void Test::setWH(int w, int h) {
+    mW = new int(w);
+    mH = new int(h);
+}
+
+void Test::operator<<(Test &test) {
+
+}
+
 //void Test::getCubePrivate() {
 //    cout << c1.m_h << endl; // 访问友元的私有
 //}
