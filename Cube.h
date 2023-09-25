@@ -6,10 +6,10 @@
 #define UNTITLED_CUBE_H
 #include <string>
 #include <iostream>
-
-/* 编译器默认提供 空构造 空析构 空拷贝构造 */
-/* 定义有参构造 则舍弃空构造  定义拷贝构造 舍弃空构造*/
+/* 编译器默认提供 空构造 空析构 默认拷贝构造(对类属性进行拷贝) */
+/* 定义有参构造 则舍弃空构造  定义拷贝构造 舍弃空构造,默认拷贝构造*/
 class Cube {
+
 public:
     /// constructor function 构造函数 可重载
     Cube();
@@ -30,12 +30,13 @@ public:
     void SetH(float h);
     std::string getName();
     static bool isSame(Cube &c1, Cube &c2);
+    void getTest();
 
     int m = 1;
 private:
     float m_l;
     float m_w;
-    float m_h;
+    float m_h = 20;
     std::string name{};
 //    Cube();
 //    ~Cube();

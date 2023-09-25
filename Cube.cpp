@@ -6,11 +6,11 @@
 using namespace std;
 
 Cube::Cube() {
-
+    cout << "构造Cube" << endl;
 }
 
 Cube::~Cube() {
-
+    cout << "析构Cube" << endl;
 }
 
 float Cube::GetArea() {
@@ -50,6 +50,10 @@ Cube::Cube(std::string name) {
 
 std::string Cube::getName() {
     return name;
+}
+
+void Cube::getTest() {
+
 }
 
 //Cube::Cube(const Cube & c) {  // 在类的成员函数中可以访问同类型实例的私有变量。

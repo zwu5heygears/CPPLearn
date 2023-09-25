@@ -9,6 +9,7 @@
 
 #include "Cube.h"
 #include "Sort.h"
+#include "Test.h"
 #include "AddressBook.h"
 // hello
 /* hello */
@@ -84,9 +85,20 @@ void fun3(Cube c);
 void fun4(Cube &c);
 Cube fun5();
 void fun6();
+int fun7(){return 10;}  // 函数的返回值可以不接受
 
 int g_a = 10;
 const int c_a = 10;
+
+// 静态成员/函数 成员函数都不属于类的对象
+class Person{
+    int mA;
+    const static int sA = 20;
+    void fun(){};
+    static void fun2(){};
+};
+
+
 int main() {
     int v2_; // letter number _ (case)
     int a = 0;  // variable use for manage memory
@@ -407,7 +419,36 @@ int main() {
     Cube c7 = fun5();
     cout << "拷贝构造函数后地址" << &c7 << endl;
 //    fun6();
+    int Height = 20;
+    int *m_height = new int (Height);  // 深拷贝
+    cout << "height:" << *m_height << endl;
+    int *m_h2 = new int (10);
+    cout << *m_h2 << endl;
 
+    Test t1(20, 30);  // 类成员（构造:类成员-自己 析构：自己-类成员
+    // 不能通过实例初始化静态成员,不属于某个对象
+    cout << t1.s_m << Test::s_m << endl;
+    Test::printAll();
+
+    Person p1class;
+    cout << sizeof(p1class) << endl; // 空对像占用1个字节(区分不同空对象)
+
+
+
+    Test mt1(10, 20);
+    Test mt2(20, 30);
+    Test mt3 = mt1.TestAddHeight(mt2).TestAddHeight(mt2);
+    cout << *mt1.mW << endl;
+    cout << *mt3.mW << endl;
+
+    Test *mt5 = nullptr;  // 空指针可以调用成员函数，但注意判断函数是否有this调用,不能有非静态成员函数
+    mt5->printHello();
+    mt1.setMember();
+    const Test mt6(0, 10); // 常对象
+    mt6.setMember(); // 只能调用常函数
+//    mt1.getCubePrivate();
+
+    Cube cc;
 
 
     /// 数值转换  int() static_cast<int>() memcpy() cout.setf()
