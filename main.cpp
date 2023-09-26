@@ -10,6 +10,7 @@
 #include <map>
 #include <list>
 #include <algorithm>
+#include <sstream>
 
 #include "Cube.h"
 #include "Sort.h"
@@ -116,6 +117,8 @@ class Person{
     static void fun2(){};
 };
 
+// 多线程promise future
+void Accmulate();
 
 int main() {
     int v2_; // letter number _ (case)
@@ -595,6 +598,44 @@ int main() {
     std::unique_ptr<int> uptr5 = std::move(uptr2); // 通过move可以转移所有权
     uptr2.release();
 
+    shared_ptr<int> sh_ptr = std::make_shared<int>(10);
+    cout << sh_ptr.use_count() << endl;
+    weak_ptr<int> wp(sh_ptr);  // weak_ptr 从 shared_ptr 构造 一般伴随shared_ptr使用
+    cout << wp.use_count() << " " << sh_ptr.use_count() << endl;
+
+    if(!wp.expired()){
+        shared_ptr<int> sh_ptr2 = wp.lock(); // weak_ptr --> shared_ptr
+        *sh_ptr = 100;
+        cout << wp.use_count() << " " << sh_ptr.use_count() << endl;
+    }
+    // 循环引用
+    class BB;
+    class AA{
+    public:
+        AA(){cout << "AA() called" << endl;}
+        ~AA(){cout << "~AA() called" << endl;}
+        weak_ptr<BB> m_bb_ptr;
+    };
+    class BB{
+    public:
+        BB(){cout << "BB() called" << endl;}
+        ~BB(){cout << "~BB() called" << endl;}
+        shared_ptr<AA> m_aa_ptr;
+    };
+
+    shared_ptr<AA> ptr_a(new AA);
+    shared_ptr<BB> ptr_b(new BB);
+    {
+        cout << ptr_a.use_count() << " " << ptr_b.use_count() << endl;
+        cout << ptr_a->m_bb_ptr.use_count() << " " << ptr_b->m_aa_ptr.use_count() << endl;
+        ptr_a->m_bb_ptr = ptr_b;
+        cout << ptr_a.use_count() << " " << ptr_b.use_count() << ptr_a->m_bb_ptr.use_count() << " "
+             << ptr_b->m_aa_ptr.use_count() << endl;
+        ptr_b->m_aa_ptr = ptr_a;
+        cout << ptr_a.use_count() << " " << ptr_b.use_count() << ptr_a->m_bb_ptr.use_count() << " "
+             << ptr_b->m_aa_ptr.use_count() << endl;
+    }
+    cout << ptr_a.use_count() << ":" << ptr_b.use_count() << endl;
     /// 数据结构
 
     /// STL
@@ -603,9 +644,58 @@ int main() {
     /// 多线程 线程安全 智能指针 线程池 IO多路复用
     thread myThread(threadFun);
     myThread.join();
+    // promise future
 
 
+    /// 类型转换 int() static_cast<int>() memcpy
+    // 自动转换
+    char tchar = 'A';
+    int ta = 1;
+    int ta1 = 2;
+    double da1 = 2.1;
 
+//    cout << std::oct << 35 << endl;
+//    cout << std::dec << 35 << endl;
+//    cout << std::hex << 14 << endl;
+
+    stringstream ss1;
+    string ssa = "20";
+    ss1 << hex << ssa;
+    int streama;
+    ss1 >> streama;
+    cout << "streama:" << streama << endl;
+
+    vector<int> testV{1, 2, 3 ,4 ,5};
+    vector<int> testV2{9, 0, 12, 45};
+    testV.insert(testV.begin(), 2);
+    testV.assign(testV2.begin(), testV2.end() - 1);
+    for(auto i = testV.begin(); i != testV.end(); ++i){
+        cout << *i << " ";
+    }
+    cout << testV.capacity() << " " << testV.size() << endl;
+    std::remove(testV.begin(), testV.end(),0);
+    for(auto i = testV.begin(); i != testV.end(); ++i){
+        cout << *i << " ";
+    }
+    cout << testV.capacity() << " " << testV.size() << endl;
+    testV.resize(2);
+
+    for(auto i = testV.begin(); i != testV.end(); ++i){
+        cout << *i << " ";
+    }
+    vector<int> cap(5);
+    cout << cap.size() << ":" << cap.capacity() << endl;
+
+    map<int, int> map22{{1,2}, {2, 3}, {3, 4}, {4, 5}};
+    map<int, int>::iterator itup, itlow;
+    itup = map22.lower_bound(1);
+    itlow = map22.upper_bound(1);
+    map22.erase(itup, itlow);
+    for(auto i = map22.begin(); i != map22.end(); ++i){
+        cout << (i->first) << " " << i->second << " ";
+    }
+    pair<map<int, int >::iterator, map<int, int>::iterator> ret;
+    ret = map22.equal_range(1);
     return 0;
 }
 
