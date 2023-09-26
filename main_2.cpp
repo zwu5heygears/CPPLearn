@@ -2,7 +2,10 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+<<<<<<< HEAD
 #include <shared_mutex>
+=======
+>>>>>>> ce779d18aca1a94c0bb8f294007d3dfa565cb218
 #include "ThreadPool.h"
 
 using namespace std;
@@ -113,8 +116,12 @@ int main_1(){
     cout << sizeof(size_t) << endl;
 
     ThreadPool pool(4);
+<<<<<<< HEAD
     shared_lock<std::shared_mutex> Readlock;
     unique_lock<std::shared_mutex> Writelock2;
     lock_guard<std::mutex> Normallock;
+=======
+
+>>>>>>> ce779d18aca1a94c0bb8f294007d3dfa565cb218
     return 0;
 }
