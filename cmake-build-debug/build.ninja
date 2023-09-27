@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: untitled
+# Project: CPPLearn
 # Configurations: Debug
 # =============================================================================
 
@@ -41,66 +41,66 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/heygears/Documents/CPPLearn/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target untitled
+# Object build statements for EXECUTABLE target CPPLearn
 
 
 #############################################
-# Order-only phony target for untitled
+# Order-only phony target for CPPLearn
 
-build cmake_object_order_depends_target_untitled: phony || CMakeFiles/untitled.dir
+build cmake_object_order_depends_target_CPPLearn: phony || CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/untitled.dir/main_6.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/main_6.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/main_6.cpp.o.d
+build CMakeFiles/CPPLearn.dir/main_C++11.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/main_C++11.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/main_C++11.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
+  OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/untitled.dir/Sort.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/Sort.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/Sort.cpp.o.d
+build CMakeFiles/CPPLearn.dir/Sort.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/Sort.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/Sort.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
+  OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/untitled.dir/AddressBook.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/AddressBook.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/AddressBook.cpp.o.d
+build CMakeFiles/CPPLearn.dir/AddressBook.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/AddressBook.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/AddressBook.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
+  OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/untitled.dir/Cube.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/Cube.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/Cube.cpp.o.d
+build CMakeFiles/CPPLearn.dir/Cube.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/Cube.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/Cube.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
+  OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/untitled.dir/Test.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/Test.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/Test.cpp.o.d
+build CMakeFiles/CPPLearn.dir/Test.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/Test.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/Test.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
+  OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/untitled.dir/ThreadPool.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/ThreadPool.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/ThreadPool.cpp.o.d
+build CMakeFiles/CPPLearn.dir/ThreadPool.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/ThreadPool.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/ThreadPool.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  OBJECT_DIR = CMakeFiles/untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
+  OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target untitled
+# Link build statements for EXECUTABLE target CPPLearn
 
 
 #############################################
-# Link the executable untitled
+# Link the executable CPPLearn
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main_6.cpp.o CMakeFiles/untitled.dir/Sort.cpp.o CMakeFiles/untitled.dir/AddressBook.cpp.o CMakeFiles/untitled.dir/Cube.cpp.o CMakeFiles/untitled.dir/Test.cpp.o CMakeFiles/untitled.dir/ThreadPool.cpp.o
+build CPPLearn: CXX_EXECUTABLE_LINKER__CPPLearn_Debug CMakeFiles/CPPLearn.dir/main_C++11.cpp.o CMakeFiles/CPPLearn.dir/Sort.cpp.o CMakeFiles/CPPLearn.dir/AddressBook.cpp.o CMakeFiles/CPPLearn.dir/Cube.cpp.o CMakeFiles/CPPLearn.dir/Test.cpp.o CMakeFiles/CPPLearn.dir/ThreadPool.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lpthread
-  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_DIR = CMakeFiles/CPPLearn.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = untitled
-  TARGET_PDB = untitled.dbg
+  TARGET_FILE = CPPLearn
+  TARGET_PDB = CPPLearn.dbg
 
 
 #############################################
@@ -136,7 +136,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/heygears/Documents/CPPLearn/cmake-build-debug
 
-build all: phony untitled
+build all: phony CPPLearn
 
 # =============================================================================
 # Built-in targets
