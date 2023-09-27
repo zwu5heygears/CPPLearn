@@ -49,13 +49,8 @@ cmake_ninja_workdir = /home/heygears/Documents/CPPLearn/cmake-build-debug/
 
 build cmake_object_order_depends_target_untitled: phony || CMakeFiles/untitled.dir
 
-<<<<<<< HEAD
-build CMakeFiles/untitled.dir/main_3.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/main_3.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/main_3.cpp.o.d
-=======
-build CMakeFiles/untitled.dir/main.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/main.cpp || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles/untitled.dir/main.cpp.o.d
->>>>>>> ce779d18aca1a94c0bb8f294007d3dfa565cb218
+build CMakeFiles/untitled.dir/main_6.cpp.o: CXX_COMPILER__untitled_Debug /home/heygears/Documents/CPPLearn/main_6.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/main_6.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
@@ -98,11 +93,7 @@ build CMakeFiles/untitled.dir/ThreadPool.cpp.o: CXX_COMPILER__untitled_Debug /ho
 #############################################
 # Link the executable untitled
 
-<<<<<<< HEAD
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main_3.cpp.o CMakeFiles/untitled.dir/Sort.cpp.o CMakeFiles/untitled.dir/AddressBook.cpp.o CMakeFiles/untitled.dir/Cube.cpp.o CMakeFiles/untitled.dir/Test.cpp.o CMakeFiles/untitled.dir/ThreadPool.cpp.o
-=======
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/Sort.cpp.o CMakeFiles/untitled.dir/AddressBook.cpp.o CMakeFiles/untitled.dir/Cube.cpp.o CMakeFiles/untitled.dir/Test.cpp.o CMakeFiles/untitled.dir/ThreadPool.cpp.o
->>>>>>> ce779d18aca1a94c0bb8f294007d3dfa565cb218
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main_6.cpp.o CMakeFiles/untitled.dir/Sort.cpp.o CMakeFiles/untitled.dir/AddressBook.cpp.o CMakeFiles/untitled.dir/Cube.cpp.o CMakeFiles/untitled.dir/Test.cpp.o CMakeFiles/untitled.dir/ThreadPool.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lpthread
   OBJECT_DIR = CMakeFiles/untitled.dir
