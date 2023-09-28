@@ -49,8 +49,8 @@ cmake_ninja_workdir = /home/heygears/Documents/CPPLearn/cmake-build-debug/
 
 build cmake_object_order_depends_target_CPPLearn: phony || CMakeFiles/CPPLearn.dir
 
-build CMakeFiles/CPPLearn.dir/main_C++11.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/main_C++11.cpp || cmake_object_order_depends_target_CPPLearn
-  DEP_FILE = CMakeFiles/CPPLearn.dir/main_C++11.cpp.o.d
+build CMakeFiles/CPPLearn.dir/main_7.cpp.o: CXX_COMPILER__CPPLearn_Debug /home/heygears/Documents/CPPLearn/main_7.cpp || cmake_object_order_depends_target_CPPLearn
+  DEP_FILE = CMakeFiles/CPPLearn.dir/main_7.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
   OBJECT_DIR = CMakeFiles/CPPLearn.dir
   OBJECT_FILE_DIR = CMakeFiles/CPPLearn.dir
@@ -93,7 +93,7 @@ build CMakeFiles/CPPLearn.dir/ThreadPool.cpp.o: CXX_COMPILER__CPPLearn_Debug /ho
 #############################################
 # Link the executable CPPLearn
 
-build CPPLearn: CXX_EXECUTABLE_LINKER__CPPLearn_Debug CMakeFiles/CPPLearn.dir/main_C++11.cpp.o CMakeFiles/CPPLearn.dir/Sort.cpp.o CMakeFiles/CPPLearn.dir/AddressBook.cpp.o CMakeFiles/CPPLearn.dir/Cube.cpp.o CMakeFiles/CPPLearn.dir/Test.cpp.o CMakeFiles/CPPLearn.dir/ThreadPool.cpp.o
+build CPPLearn: CXX_EXECUTABLE_LINKER__CPPLearn_Debug CMakeFiles/CPPLearn.dir/main_7.cpp.o CMakeFiles/CPPLearn.dir/Sort.cpp.o CMakeFiles/CPPLearn.dir/AddressBook.cpp.o CMakeFiles/CPPLearn.dir/Cube.cpp.o CMakeFiles/CPPLearn.dir/Test.cpp.o CMakeFiles/CPPLearn.dir/ThreadPool.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lpthread
   OBJECT_DIR = CMakeFiles/CPPLearn.dir

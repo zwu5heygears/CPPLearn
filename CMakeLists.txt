@@ -5,6 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(Threads REQUIRED)
 
-add_executable(CPPLearn main_C++11.cpp Sort.cpp Sort.h AddressBook.cpp AddressBook.h Cube.cpp Cube.h Test.cpp Test.h  ThreadPool.cpp ThreadPool.h)
+add_executable(CPPLearn main_7.cpp Sort.cpp Sort.h AddressBook.cpp AddressBook.h Cube.cpp Cube.h Test.cpp Test.h  ThreadPool.cpp ThreadPool.h)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} Threads::Threads)
